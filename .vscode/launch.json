@@ -6,10 +6,21 @@
     "configurations": [
         
         {
-            "name": "Python: Django",
+            "name": "first Django",
             "type": "python",
             "request": "launch",
             "program": "${workspaceFolder}/first/onlinestore/manage.py",
+            "args": [
+                "runserver",
+                "--noreload"
+            ],
+            "django": true
+        },
+        {
+            "name": "step1 Django",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/step1/newsapi/manage.py",
             "args": [
                 "runserver",
                 "--noreload"
