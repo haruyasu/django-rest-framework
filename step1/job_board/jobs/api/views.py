@@ -8,7 +8,6 @@ from jobs.api.serializers import JobOfferSerializer
 
 
 class JobOfferListCreateAPIView(APIView):
-
     def get(self, request):
         jobs = JobOffer.objects.filter(available=True)
         serializer = JobOfferSerializer(jobs, many=True)
@@ -24,7 +23,6 @@ class JobOfferListCreateAPIView(APIView):
 
 
 class JobOfferDetailAPIView(APIView):
-
     def get_object(self, pk):
         job = get_object_or_404(JobOffer, pk=pk)
         return job
