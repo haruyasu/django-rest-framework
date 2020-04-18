@@ -2,6 +2,7 @@ from rest_framework import generics
 from rest_framework import permissions
 from rest_framework.exceptions import ValidationError
 from rest_framework.generics import get_object_or_404
+# from rest_framework import mixins
 
 from ebooks.models import Ebook, Review
 from ebooks.api.pagination import SmallSetPagination
@@ -45,10 +46,7 @@ class ReviewDetailAPIView(generics.RetrieveUpdateDestroyAPIView):
     permission_classes = [IsReviewAuthorOrReadOnly]
 
 
-# class EbookListCreateAPIView(mixins.ListModelMixin,
-#                              mixins.CreateModelMixin,
-#                              generics.GenericAPIView):
-
+# class EbookListCreateAPIView(mixins.ListModelMixin, mixins.CreateModelMixin, generics.GenericAPIView):
 #     queryset = Ebook.objects.all()
 #     serializer_class = EbookSerializer
 
